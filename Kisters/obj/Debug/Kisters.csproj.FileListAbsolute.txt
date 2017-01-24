@@ -1,0 +1,34 @@
+c:\users\alexander\documents\visual studio 2015\Projects\Kisters\Kisters\bin\Debug\Kisters.exe.config
+c:\users\alexander\documents\visual studio 2015\Projects\Kisters\Kisters\bin\Debug\Kisters.exe
+c:\users\alexander\documents\visual studio 2015\Projects\Kisters\Kisters\bin\Debug\Kisters.pdb
+c:\users\alexander\documents\visual studio 2015\Projects\Kisters\Kisters\bin\Debug\Interop.K3DVSAXLib.dll
+c:\users\alexander\documents\visual studio 2015\Projects\Kisters\Kisters\bin\Debug\AxInterop.K3DVSAXLib.dll
+c:\users\alexander\documents\visual studio 2015\Projects\Kisters\Kisters\obj\Debug\Interop.K3DVSAXLib.dll
+c:\users\alexander\documents\visual studio 2015\Projects\Kisters\Kisters\obj\Debug\AxInterop.K3DVSAXLib.dll
+c:\users\alexander\documents\visual studio 2015\Projects\Kisters\Kisters\obj\Debug\Kisters.csproj.ResolveComReference.cache
+c:\users\alexander\documents\visual studio 2015\Projects\Kisters\Kisters\obj\Debug\Kisters.Form1.resources
+c:\users\alexander\documents\visual studio 2015\Projects\Kisters\Kisters\obj\Debug\Kisters.Properties.Resources.resources
+c:\users\alexander\documents\visual studio 2015\Projects\Kisters\Kisters\obj\Debug\Kisters.csproj.GenerateResource.Cache
+c:\users\alexander\documents\visual studio 2015\Projects\Kisters\Kisters\obj\Debug\Kisters.exe
+c:\users\alexander\documents\visual studio 2015\Projects\Kisters\Kisters\obj\Debug\Kisters.pdb
+C:\Users\Alexander\Documents\Visual Studio 2015\Projects\Kisters\Kisters\obj\Debug\Kisters.KistersUC.resources
+C:\Users\Alexander\Documents\Visual Studio 2015\Projects\Kisters\Kisters\bin\Debug\ModelsDB.mdf
+C:\Users\Alexander\Documents\Visual Studio 2015\Projects\Kisters\Kisters\bin\Debug\ModelsDB_log.ldf
+C:\Users\Alexander\Documents\Visual Studio 2015\Projects\Kisters\Kisters\obj\Debug\Kisters.csprojResolveAssemblyReference.cache
+C:\Users\Il\Desktop\Kisters\Kisters\bin\Debug\Kisters.exe.config
+C:\Users\Il\Desktop\Kisters\Kisters\obj\Debug\Interop.K3DVSAXLib.dll
+C:\Users\Il\Desktop\Kisters\Kisters\obj\Debug\AxInterop.K3DVSAXLib.dll
+C:\Users\Il\Desktop\Kisters\Kisters\obj\Debug\Kisters.csproj.ResolveComReference.cache
+C:\Users\Il\Desktop\Kisters\Kisters\obj\Debug\Kisters.exe
+C:\Users\Il\Desktop\Kisters\Kisters\obj\Debug\Kisters.pdb
+C:\Users\Il\Desktop\Kisters\Kisters\obj\Debug\Kisters.csprojResolveAssemblyReference.cache
+C:\Users\Il\Desktop\Kisters\Kisters\obj\Debug\Kisters.Form1.resources
+C:\Users\Il\Desktop\Kisters\Kisters\obj\Debug\Kisters.KistersUC.resources
+C:\Users\Il\Desktop\Kisters\Kisters\obj\Debug\Kisters.Properties.Resources.resources
+C:\Users\Il\Desktop\Kisters\Kisters\obj\Debug\Kisters.csproj.GenerateResource.Cache
+C:\Users\Il\Desktop\Kisters\Kisters\bin\Debug\ModelsDB.mdf
+C:\Users\Il\Desktop\Kisters\Kisters\bin\Debug\ModelsDB_log.ldf
+C:\Users\Il\Desktop\Kisters\Kisters\bin\Debug\Kisters.exe
+C:\Users\Il\Desktop\Kisters\Kisters\bin\Debug\Kisters.pdb
+C:\Users\Il\Desktop\Kisters\Kisters\bin\Debug\Interop.K3DVSAXLib.dll
+C:\Users\Il\Desktop\Kisters\Kisters\bin\Debug\AxInterop.K3DVSAXLib.dll

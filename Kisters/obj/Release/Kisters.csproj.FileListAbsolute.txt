@@ -1,0 +1,16 @@
+C:\Users\Il\Desktop\Kisters\Kisters\bin\Release\Kisters.exe.config
+C:\Users\Il\Desktop\Kisters\Kisters\obj\Release\Interop.K3DVSAXLib.dll
+C:\Users\Il\Desktop\Kisters\Kisters\obj\Release\AxInterop.K3DVSAXLib.dll
+C:\Users\Il\Desktop\Kisters\Kisters\obj\Release\Kisters.csproj.ResolveComReference.cache
+C:\Users\Il\Desktop\Kisters\Kisters\bin\Release\ModelsDB.mdf
+C:\Users\Il\Desktop\Kisters\Kisters\bin\Release\ModelsDB_log.ldf
+C:\Users\Il\Desktop\Kisters\Kisters\bin\Release\Kisters.exe
+C:\Users\Il\Desktop\Kisters\Kisters\bin\Release\Kisters.pdb
+C:\Users\Il\Desktop\Kisters\Kisters\bin\Release\Interop.K3DVSAXLib.dll
+C:\Users\Il\Desktop\Kisters\Kisters\bin\Release\AxInterop.K3DVSAXLib.dll
+C:\Users\Il\Desktop\Kisters\Kisters\obj\Release\Kisters.Form1.resources
+C:\Users\Il\Desktop\Kisters\Kisters\obj\Release\Kisters.KistersUC.resources
+C:\Users\Il\Desktop\Kisters\Kisters\obj\Release\Kisters.Properties.Resources.resources
+C:\Users\Il\Desktop\Kisters\Kisters\obj\Release\Kisters.csproj.GenerateResource.Cache
+C:\Users\Il\Desktop\Kisters\Kisters\obj\Release\Kisters.exe
+C:\Users\Il\Desktop\Kisters\Kisters\obj\Release\Kisters.pdb

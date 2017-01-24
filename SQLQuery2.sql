@@ -1,0 +1,1 @@
+﻿insert into [dbo].Model values ('model','2736320.75000', '6682635.50000', '2.71000', '2065.6', '547.0', '50.8', 'iVBjXtajfFgAAAABJRU5ErkJggg==')
