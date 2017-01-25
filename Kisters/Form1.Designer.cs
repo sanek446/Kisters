@@ -199,14 +199,6 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
         
-        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn surfaceDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn volumeDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn densityDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dXDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dYDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dZDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button button4;

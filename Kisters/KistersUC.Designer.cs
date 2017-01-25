@@ -224,6 +224,7 @@
             this.Controls.Add(this.axK3DVSAX1);
             this.Name = "KistersUC";
             this.Size = new System.Drawing.Size(908, 531);
+            this.Load += new System.EventHandler(this.KistersUC_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.axK3DVSAX1)).EndInit();
             this.ResumeLayout(false);

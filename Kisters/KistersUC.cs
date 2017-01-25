@@ -34,10 +34,10 @@ namespace Kisters
         string dy = "";
         string dz = "";
 
-        public string serverConn = "";
+        private string serverConn = "";
         SqlConnection connection;
-        public string insertSpName;
-        public string insertSpNotes;
+        private string insertSpName;
+        private string insertSpNotes;
         private string tableName = "";
 
         public void SetData(string serverConnF, string insertSpNameF, string insertSpNotesF, string tableNameF)
@@ -127,13 +127,13 @@ namespace Kisters
             }
         }
 
-        public void Start3DVS()
+        private void Start3DVS()
         {
             //Starts the ViewStation
             axK3DVSAX1.Start3DVS();
         }
 
-        public void Terminate3DVS()
+        private void Terminate3DVS()
         {
             //Terminate the ViewStation
             axK3DVSAX1.Terminate();
@@ -259,9 +259,6 @@ namespace Kisters
                 return;
             }
 
-            //start Kisters 3D
-            Start3DVS();
-
             //display file
             displayFile(textBox1.Text);
 
@@ -298,7 +295,7 @@ namespace Kisters
             }
 
             
-            //===without this Kisters saves small pictures
+            //===without this Kisters saves small pictures when run app without VS???
             var w = new Form() { Size = new Size(0, 0) };
             Task.Delay(TimeSpan.FromMilliseconds(100))
                 .ContinueWith((t) => w.Close(), TaskScheduler.FromCurrentSynchronizationContext());
@@ -325,10 +322,11 @@ namespace Kisters
                 {
                     partName = node.Attributes["Name"].Value;
                     //we have to find node with "Ri_BrepModel" right after node with "Part" with the same name
+                    //or with name = "MechanicalTool.2" ???
 
                     foreach (XmlNode childNode in node.ChildNodes)
                     {
-                        if ((childNode.Attributes["Type"].Value == "Ri_BrepModel") && (childNode.Attributes["Name"].Value == partName))
+                        if ((childNode.Attributes["Type"].Value == "Ri_BrepModel") && ((childNode.Attributes["Name"].Value == partName) || (childNode.Attributes["Name"].Value == "MechanicalTool.2")))
                         {
                             nodeTemp = Int32.Parse(childNode.Attributes["Id"].Value);
                             goto linkExit;
@@ -338,7 +336,7 @@ namespace Kisters
                         {
                             foreach (XmlNode grandChildNode in childNode.ChildNodes)
                             {
-                                if ((grandChildNode.Attributes["Type"].Value == "Ri_BrepModel") && (grandChildNode.Attributes["Name"].Value == partName))
+                                if ((grandChildNode.Attributes["Type"].Value == "Ri_BrepModel") && ((grandChildNode.Attributes["Name"].Value == partName) || (grandChildNode.Attributes["Name"].Value == "MechanicalTool.2")))
                                 {
                                     nodeTemp = Int32.Parse(grandChildNode.Attributes["Id"].Value);
                                     goto linkExit;
@@ -347,14 +345,11 @@ namespace Kisters
                         } 
                     }
 
-                linkExit:
-
-                    //Console.WriteLine(nodeTemp);
+                linkExit:                    
                     nodesList = nodesList + "<NodeId>" + nodeTemp.ToString() + "</NodeId>";
                     nodes.Add("<NodeId>" + nodeTemp.ToString() + "</NodeId>");
                 }
             }
-
 
             //also get
             //< Node Id = "360" Name = "Standard Notes:" Type = "Ri_Set" />
@@ -461,7 +456,8 @@ namespace Kisters
             if (pow == 3)
                 powString = "\u00b3";
 
-            return Math.Round(Convert.ToDouble(value.Replace(".", ",")), 2).ToString()   + " mm" + powString;          
+            //return Math.Round(Convert.ToDouble(value.Replace(".", ",")), 2).ToString()   + " mm" + powString; //for RU
+            return Math.Round(Convert.ToDouble(value), 2).ToString() + " mm" + powString; //for US
         }
 
         private void activateMinBox(string currentNode)
@@ -496,7 +492,7 @@ namespace Kisters
             //string sXmlResponse = "<Response Method = 'GetImage' Error = 'SUCCESS'><ExportFormat2D>PNG</ExportFormat2D><Image>Image in Base64</Image></Response>";
             string sXmlResponse = "";
             string imageString = "";
-            Image image;
+            //Image image;
             int iRet = axK3DVSAX1.ExecuteApiCall(sXmlCall, ref sXmlResponse);
             //Check if the call succeeded
             if (0 == iRet)
@@ -970,9 +966,6 @@ namespace Kisters
         //from Kisters
         bool ExecuteXml(String sXml, String response = null)
         {
-            // Console.WriteLine("Call:");
-            //Console.WriteLine(sXml);
-
             String sXmlResponse = "";
 
             //Execute the xml call
@@ -980,9 +973,6 @@ namespace Kisters
 
             if (0 != sXmlResponse.Length)
             {
-                //Console.WriteLine("Response:");
-                //Console.WriteLine(sXmlResponse);
-
                 if (null != response)
                 {
                     response = sXmlResponse;
@@ -997,36 +987,10 @@ namespace Kisters
             String sXml = @"<Call Method='ModifySelection'><SelectionModifier>" + sModifier + @"</SelectionModifier></Call>";
             ExecuteXml(sXml);
         }
-
-        private string convertIntoInch(string mmValue, int pow)
-        {
-            double value = 0;
-
-            //* 0.0393701 or /25.4 for mm
-            //* 0.0393701 * 0.0393701 or /25.4 or /25.4 for mm2
-            //* 0.0393701 * 0.0393701 * 0.0393701 or /25.4 /25.4 /25.4 for mm3
-
-            /*if (pow == 1)
-                value = Convert.ToDouble(mmValue.Replace(".", ",")) * 0.0393701;
-
-            if (pow == 2)
-                value = Convert.ToDouble(mmValue.Replace(".", ",")) * 0.0393701 * 0.0393701;
             
-            if (pow == 3)
-                value = Convert.ToDouble(mmValue.Replace(".", ",")) * 0.0393701 * 0.0393701 * 0.0393701;*/
-
-            if (pow == 1)
-                value = Convert.ToDouble(mmValue.Replace(".", ",")) / 25.4;
-
-            if (pow == 2)
-                value = Convert.ToDouble(mmValue.Replace(".", ",")) / 25.4 / 25.4;
-
-            if (pow == 3)
-                value = Convert.ToDouble(mmValue.Replace(".", ",")) / 25.4 / 25.4 / 25.4;
-
-
-            return Math.Round(value, 2).ToString().Replace(",", ".");
+        private void KistersUC_Load(object sender, EventArgs e)
+        {
+            Start3DVS();
         }
-
     }
 }

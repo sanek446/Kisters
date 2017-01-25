@@ -4,9 +4,11 @@ using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml;
@@ -16,19 +18,17 @@ namespace Kisters
     public partial class Form1 : Form
     {
 
-
         public Form1()
         {
             InitializeComponent();
+            //to solve the problem with decimal separator
+            Thread.CurrentThread.CurrentCulture = new CultureInfo("en-US");            
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             if (openFileDialog1.ShowDialog() == System.Windows.Forms.DialogResult.OK)
-            {
-                //run Kisters3D
-                kistersUC1.Start3DVS();
-                
+            {                
                 foreach (String file in openFileDialog1.FileNames)
                 {
                     Console.WriteLine(DateTime.Now);
@@ -36,9 +36,6 @@ namespace Kisters
                     kistersUC1.SetFile(file);
                     Console.WriteLine(DateTime.Now);
                 }
-
-                //kill Kisters3D
-                kistersUC1.Terminate3DVS();
                 MessageBox.Show("Done");                        
             }
         }
@@ -128,10 +125,8 @@ namespace Kisters
 
                             fs.Close();
                         }
-                    }                 
-
+                    }
                     reader.Close();
-
                 }
                 catch (Exception ex)
                 {
@@ -193,7 +188,6 @@ namespace Kisters
                     Console.WriteLine(ex.ToString());
                 }
             }
-
             selectFromBD();
         }
 
@@ -240,7 +234,6 @@ namespace Kisters
                         dataGridView2.DataSource = dt;
                     }
                 }
-
             }
         }
 
